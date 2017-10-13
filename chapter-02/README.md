@@ -1,5 +1,5 @@
-2-1. *cleanup*: A script to clean up log files in `/var/log`
+**2-1.** *cleanup*: `/var/log` 폴더 내의 로그 파일을 삭제하는 스크립트
 
-2-2. *cleanup*: An improved clean-up script
+**2-2.** *cleanup*: 개선된 clean-up 스크립트
 
-2-3. *cleanup*: An enhanced and generalized version of above scripts.
+**2-3.** *cleanup*: 위의 스크립트들 보다 개선되고 일반화된 버전
