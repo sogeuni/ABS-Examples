@@ -1,3 +1,3 @@
-6-1. exit / exit status
+**6-1.** 종료(exit) / 종료 상태(exit status)
 
-6-2. Negating a condition using !
+**6-2.** `!`를 사용하여 부정하기
