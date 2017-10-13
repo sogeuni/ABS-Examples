@@ -1,7 +1,7 @@
-3-1. Code blocks and I/O redirection
+**3-1.** 코드 블록과 I/O 리다이렉션
 
-3-2. Saving the output of a code block to a file
+**3-2.** 코드 블록의 결과를 파일로 저장하기
 
-3-3. Running a loop in the background
+**3-3.** 백그라운드에서 loop 실행하기
 
-3-4. Backup of all files changed in last day
+**3-4.** 마지막 날에 변경된 모든 파일을 백업하기

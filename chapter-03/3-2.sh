@@ -1,11 +1,10 @@
 #!/bin/bash
 # rpm-check.sh
 
-#  Queries an rpm file for description, listing,
-#+ and whether it can be installed.
-#  Saves output to a file.
+#  rpm 파일의 상세정보, 파일목록, 설치여부를 조회하고,
+#+ 결과를 파일로 저장합니다.
 #
-#  This script illustrates using a code block.
+#  이 스크립트는 코드 블록을 사용하는 방법에 대해 서술합니다.
 
 SUCCESS=0
 E_NOARGS=65
@@ -16,26 +15,26 @@ then
   exit $E_NOARGS
 fi
 
-{ # Begin code block.
+{ # 코드 블록 시작
   echo
   echo "Archive Description:"
-  rpm -qpi $1       # Query description.
+  rpm -qpi $1       # 상세정보 조회
   echo
   echo "Archive Listing:"
-  rpm -qpl $1       # Query listing.
+  rpm -qpl $1       # 파일 목록 조회
   echo
-  rpm -i --test $1  # Query whether rpm file can be installed.
+  rpm -i --test $1  # 설치 여부 조회
   if [ "$?" -eq $SUCCESS ]
   then
     echo "$1 can be installed."
   else
     echo "$1 cannot be installed."
   fi
-  echo              # End code block.
-} > "$1.test"       # Redirects output of everything in block to file.
+  echo              # 코드 블록 종료
+} > "$1.test"       # 블록 내의 모든 결과를 파일로 리다이렉트
 
 echo "Results of rpm test in file $1.test"
 
-# See rpm man page for explanation of options.
+# 옵션들에 대한 설명은 rpm man 페이지를 참조하세요.
 
 exit 0
