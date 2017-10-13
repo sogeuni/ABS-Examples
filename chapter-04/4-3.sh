@@ -1,23 +1,22 @@
 #!/bin/bash
 
-a=23              # Simple case
+a=23              # 단순한 방식
 echo $a
 b=$a
 echo $b
 
-# Now, getting a little bit fancier (command substitution).
+# 자 이제 좀더 다양한 방법을 시도해 보겠습니다.. (명령어 치환, command substitution)
 
-a=`echo Hello!`   # Assigns result of 'echo' command to 'a' ...
+a=`echo Hello!`   # 'echo' 명령어의 결과를 'a'에 할당합니다.
 echo $a
-#  Note that including an exclamation mark (!) within a
-#+ command substitution construct will not work from the command-line,
-#+ since this triggers the Bash "history mechanism."
-#  Inside a script, however, the history functions are disabled by default.
+#  명령어 치환 구조 내에 느낌표(!)가 포함된 경우 명령줄(command-line)에서는 동작하지 않습니다.
+#+ 느낌표가 Bash의 "히스토리 매커니즘"을 동작시키기 때문입니다.
+#  하지만, 스크립트 내에서는 기본적으로 히스토리 함수가 비활성화 되어 있습니다.
 
-a=`ls -l`         # Assigns result of 'ls -l' command to 'a'
-echo $a           # Unquoted, however, it removes tabs and newlines.
+a=`ls -l`         # 'ls -l'의 결과를 'a'에 할당합니다.
+echo $a           # 따옴표를 치지 않으면 탭과 줄바꿈이 제거됩니다.
 echo
-echo "$a"         # The quoted variable preserves whitespace.
-                  # (See the chapter on "Quoting.")
+echo "$a"         # 따옴표를 치면 공백문자가 유지됩니다.
+                  # ("Quoting" 챕터 참조)
 
 exit 0

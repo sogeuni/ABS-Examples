@@ -1,36 +1,36 @@
 #!/bin/bash
 # ex9.sh
 
-# Variables: assignment and substitution
+# 변수: 할당(assignment)과 치환(substitution)
 
 a=375
 hello=$a
 #   ^ ^
 
 #-------------------------------------------------------------------------
-# No space permitted on either side of = sign when initializing variables.
-# What happens if there is a space?
+# 변수를 초기화 할 때 = 기호 양 옆의 공백은 허용하지 않습니다.
+# 공백이 있다면 어떻게 될까요?
 
 #  "VARIABLE =value"
 #           ^
-#% Script tries to run "VARIABLE" command with one argument, "=value".
+#% 스크립트는 "VARIABLE"을 커맨드로 인식하고 "=value" 인자와 함께 실행하려 할 것입니다.
 
 #  "VARIABLE= value"
 #            ^
-#% Script tries to run "value" command with
-#+ the environmental variable "VARIABLE" set to "".
+#% 스크립트는 "value"를 커맨드로 인식하고
+#+ 환경변수 "VARIABLE"을 ""로 셋팅하여 실행하려 할 것입니다.
 #-------------------------------------------------------------------------
 
 
 echo hello    # hello
-# Not a variable reference, just the string "hello" ...
+# 변수 참조가 아니라 단순히 문자열 "hello"를 나타냅니다.
 
 echo $hello   # 375
-#    ^          This *is* a variable reference.
+#    ^          이것은 변수 참조 입니다.
 echo ${hello} # 375
-#               Likewise a variable reference, as above.
+#               위와 같은 변수 참조 입니다.
 
-# Quoting . . .
+# Quoting ...
 echo "$hello"    # 375
 echo "${hello}"  # 375
 
@@ -39,37 +39,36 @@ echo
 hello="A B  C   D"
 echo $hello   # A B C D
 echo "$hello" # A B  C   D
-# As we see, echo $hello   and   echo "$hello"   give different results.
+# 보시다시피, echo $hello 와 echo "$hello" 는 다른 결과를 나타냅니다.
 # =======================================
-# Quoting a variable preserves whitespace.
+# 변수에 큰 따옴표를 치면(Quoting) 공백이 보존됩니다.
 # =======================================
 
 echo
 
 echo '$hello'  # $hello
 #    ^      ^
-#  Variable referencing disabled (escaped) by single quotes,
-#+ which causes the "$" to be interpreted literally.
+# 작은 따옴표는 "$"를 문자 그대로 해석하기 때문에,
+#+ 변수 참조를 비활성(이스케이프) 시킵니다.
 
-# Notice the effect of different types of quoting.
+# 인용부호의 타입에 따라 다른 효과가 나타남에 주목하세요.
 
 
-hello=    # Setting it to a null value.
+hello=    # null 값을 설정합니다.
 echo "\$hello (null value) = $hello"      # $hello (null value) =
-#  Note that setting a variable to a null value is not the same as
-#+ unsetting it, although the end result is the same (see below).
+#  변수를 null로 셋팅화는 것과 셋팅하지 않는 것과는
+#+ 결과는 같지만(아래 참조) 실제로는 다릅니다.
 
 # --------------------------------------------------------------
 
-#  It is permissible to set multiple variables on the same line,
-#+ if separated by white space.
-#  Caution, this may reduce legibility, and may not be portable.
+#  공백으로 구분하여 같은 라인에 여러개의 변수를 선언하는 것이 가능합니다.
+#  하지만 가독성과 이식성이 떨어질 수 있으니 주의하세요.
 
 var1=21  var2=22  var3=$V3
 echo
 echo "var1=$var1   var2=$var2   var3=$var3"
 
-# May cause problems with legacy versions of "sh" . . .
+# 레거시 버전의 "sh"에서 문제가 발생할 수도 있습니다.
 
 # --------------------------------------------------------------
 
@@ -79,31 +78,30 @@ numbers="one two three"
 #           ^   ^
 other_numbers="1 2 3"
 #               ^ ^
-#  If there is whitespace embedded within a variable,
-#+ then quotes are necessary.
-#  other_numbers=1 2 3                  # Gives an error message.
+#  값에 공백이 포함되어 있다면 따옴표가 필요합니다.
+#  other_numbers=1 2 3                  # 에러 발생.
 echo "numbers = $numbers"
 echo "other_numbers = $other_numbers"   # other_numbers = 1 2 3
-#  Escaping the whitespace also works.
+#  따옴표 대신 공백문자를 이스케이프 해도 됩니다.
 mixed_bag=2\ ---\ Whatever
-#           ^    ^ Space after escape (\).
+#           ^    ^ 이스케이프된 스페이스.
 
 echo "$mixed_bag"         # 2 --- Whatever
 
 echo; echo
 
 echo "uninitialized_variable = $uninitialized_variable"
-# Uninitialized variable has null value (no value at all!).
-uninitialized_variable=   #  Declaring, but not initializing it --
-                          #+ same as setting it to a null value, as above.
+# 초기화되지 않은 변수는 null 값을 가집니다. (값이 없음)
+uninitialized_variable=   #  선언되었으나, 초기화 되지는 않았음
+                          #+ 위와 같이 null 값을 설정한 것과 같습니다.
 echo "uninitialized_variable = $uninitialized_variable"
-                          # It still has a null value.
+                          # 이것 역시 null 값을 가집니다.
 
-uninitialized_variable=23       # Set it.
-unset uninitialized_variable    # Unset it.
+uninitialized_variable=23       # 값을 설정 하고,
+unset uninitialized_variable    # unset 합니다.
 echo "uninitialized_variable = $uninitialized_variable"
                                 # uninitialized_variable =
-                                # It still has a null value.
+                                # 이것 역시 null 값을 가집니다.
 echo
 
 exit 0

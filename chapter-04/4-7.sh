@@ -1,27 +1,23 @@
 #!/bin/bash
-# shft.sh: Using 'shift' to step through all the positional parameters.
+# shft.sh: 'shift'를 사용하여 모든 위치 매개변수를 단계적으로 접근합니다.
 
-#  Name this script something like shft.sh,
-#+ and invoke it with some parameters.
-#+ For example:
+# 이 스크립트의 이름이 shift.sh 라면 다음과 같이 매개 변수와 함께 호출합니다.
+# 예:
 #             sh shft.sh a b c def 83 barndoor
 
-until [ -z "$1" ]  # Until all parameters used up . . .
+until [ -z "$1" ]  # 모든 매개변수를 사용할 때까지...
 do
   echo -n "$1 "
   shift
 done
 
-echo               # Extra linefeed.
+echo               # 추가 줄바꿈(linefeed).
 
-# But, what happens to the "used-up" parameters?
+# 그렇다면, 범위를 초과한 매개변수는 어떻게 될까요?
 echo "$2"
-#  Nothing echoes!
-#  When $2 shifts into $1 (and there is no $3 to shift into $2)
-#+ then $2 remains empty.
-#  So, it is not a parameter *copy*, but a *move*.
+#  아무것도 출력하지 않습니다!
+#  $2는 $1으로 이동하고 ($3은 $2로 이동하고...)
+#+ 결국 $2는 빈값이 됩니다.
+#  따라서, shift는 매개 변수 *복사*가 아니라 *이동*입니다.
 
 exit
-
-#  See also the echo-params.sh script for a "shiftless"
-#+ alternative method of stepping through the positional params.
