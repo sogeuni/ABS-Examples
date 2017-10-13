@@ -1,13 +1,13 @@
-7-1. What is truth?
+**7-1.** What is truth?
 
-7-2. Equivalence of test, /usr/bin/test, [ ], and /usr/bin/[
+**7-2.** `test`, `/usr/bin/test`, `[ ]`, `/usr/bin/[` 의 동일성
 
-7-3. Arithmetic Tests using (( ))
+**7-3.** `(( ))`를 사용한 산술 테스트
 
-7-4. Testing for broken links
+**7-4.** 링크가 깨졌는지 테스트하기
 
-7-5. Arithmetic and string comparisons
+**7-5.** 산술 및 문자열 비교
 
-7-6. Testing whether a string is null
+**7-6.** 문자열이 null 인지 테스트하기
 
-7-7. *zmore*
+**7-7.** *zmore*

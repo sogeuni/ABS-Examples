@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #  Tip:
-#  If you're unsure how a certain condition might evaluate,
-#+ test it in an if-test.
+#  특정 조건이 어떻게 평가되어야 하는지 확실치 않은 경우,
+#+ if-test 내에서 테스트 합니다.
 
 echo
 
@@ -12,7 +12,7 @@ then
   echo "0 is true."
 else          # Or else ...
   echo "0 is false."
-fi            # 0 is true.
+fi            # 0은 true.
 
 echo
 
@@ -22,7 +22,7 @@ then
   echo "1 is true."
 else
   echo "1 is false."
-fi            # 1 is true.
+fi            # 1은 true.
 
 echo
 
@@ -32,7 +32,7 @@ then
   echo "-1 is true."
 else
   echo "-1 is false."
-fi            # -1 is true.
+fi            # -1은 true.
 
 echo
 
@@ -42,7 +42,7 @@ then
   echo "NULL is true."
 else
   echo "NULL is false."
-fi            # NULL is false.
+fi            # NULL은 false.
 
 echo
 
@@ -52,33 +52,33 @@ then
   echo "Random string is true."
 else
   echo "Random string is false."
-fi            # Random string is true.
+fi            # 임의의 문자열은 true.
 
 echo
 
 echo "Testing \"\$xyz\""
-if [ $xyz ]   # Tests if $xyz is null, but...
-              # it's only an uninitialized variable.
+if [ $xyz ]   # $xyz가 null 인지 테스트합니다.
+              # 하지만 현재는 초기화되지 않은 변수입니다.
 then
   echo "Uninitialized variable is true."
 else
   echo "Uninitialized variable is false."
-fi            # Uninitialized variable is false.
+fi            # 초기화되지 않은 변수는 false.
 
 echo
 
 echo "Testing \"-n \$xyz\""
-if [ -n "$xyz" ]            # More pedantically correct.
+if [ -n "$xyz" ]            # 좀더 유식한척하면...
 then
   echo "Uninitialized variable is true."
 else
   echo "Uninitialized variable is false."
-fi            # Uninitialized variable is false.
+fi            # 초기화되지 않은 변수는 false.
 
 echo
 
 
-xyz=          # Initialized, but set to null value.
+xyz=          # 초기화 하였지만, null 값을 설정한 경우.
 
 echo "Testing \"-n \$xyz\""
 if [ -n "$xyz" ]
@@ -86,34 +86,34 @@ then
   echo "Null variable is true."
 else
   echo "Null variable is false."
-fi            # Null variable is false.
+fi            # Null 변수는 false.
 
 
 echo
 
 
-# When is "false" true?
+# "false"는 언제 true 일까요?
 
 echo "Testing \"false\""
-if [ "false" ]              #  It seems that "false" is just a string ...
+if [ "false" ]              #  이것은 단순히 "false" 문자열을 의미하므로...
 then
-  echo "\"false\" is true." #+ and it tests true.
+  echo "\"false\" is true." #+ 이것을 테스트하면 true입니다.
 else
   echo "\"false\" is false."
-fi            # "false" is true.
+fi            # "false"는 true.
 
 echo
 
-echo "Testing \"\$false\""  # Again, uninitialized variable.
+echo "Testing \"\$false\""  # 다시, 초기화되지 않은 변수입니다.
 if [ "$false" ]
 then
   echo "\"\$false\" is true."
 else
   echo "\"\$false\" is false."
-fi            # "$false" is false.
-              # Now, we get the expected result.
+fi            # "$false"는 false.
+              # 예상하던 결과를 얻었습니다.
 
-#  What would happen if we tested the uninitialized variable "$true"?
+#  초기화되지않은 "$true" 변수를 테스트하면 어떻게 될까요?
 
 echo
 
