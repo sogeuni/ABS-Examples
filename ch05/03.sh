@@ -1,7 +1,7 @@
 #!/bin/bash
 # Author: Sigurd Solaas, 20 Apr 2011
 # Used in ABS Guide with permission.
-# Bash 4.2 이상을 필요로 함.
+# Bash 4.2 이상에서 동작
 
 key="no value yet"
 while true; do

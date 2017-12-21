@@ -3,13 +3,12 @@
 a=4
 b=5
 
-#  Here "a" and "b" can be treated either as integers or strings.
-#  There is some blurring between the arithmetic and string comparisons,
-#+ since Bash variables are not strongly typed.
+#  여기서 "a"와 "b"는 정수 또는 문자열로 간주합니다.
+#  Bash 변수는 타입을 명확하게 지정하지 않기 때문에,
+#+ 산술 비교인지 문자열 비교인지 모호한 부분이 있습니다.
 
-#  Bash permits integer operations and comparisons on variables
-#+ whose value consists of all-integer characters.
-#  Caution advised, however.
+# Bash는 변수의 모든 값이 정수로 구성된 경우 정수의 연산과 비교를 허용합니다.
+# 하지만 주의를 요합니다.
 
 echo
 
@@ -29,7 +28,7 @@ then
   # ASCII 52 != ASCII 53
 fi
 
-# In this particular instance, both "-ne" and "!=" work.
+# 이러한 특별한 경우에 "-ne"와 "!=" 모두 동작합니다.
 
 echo
 

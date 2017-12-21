@@ -1,11 +1,11 @@
 #!/bin/bash
-# gcd.sh: greatest common divisor
-#         Uses Euclid's algorithm
+# gcd.sh: 최대 공약수(greatest common divisor)
+#         유클리드 알고리즘을 사용합니다.
 
-#  The "greatest common divisor" (gcd) of two integers
-#+ is the largest integer that will divide both, leaving no remainder.
+#  두 정수의 최대 공약수는 나머지 없이 두 정수를 모두 나눌수 있는 가장큰 정수값입니다.
 
-#  Euclid's algorithm uses successive division.
+#  유클리드 알고리즘은 연속적인 나눗셈을 사용합니다.
+#    
 #    In each pass,
 #+      dividend <---  divisor
 #+      divisor  <---  remainder
